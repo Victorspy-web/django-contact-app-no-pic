@@ -1,4 +1,5 @@
 from django.urls import path
+
 from .views import contact_create, contact, update_contact, delete_contact, ContactList, update_info
 
 urlpatterns = [

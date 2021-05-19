@@ -8,7 +8,7 @@ body{
 }
 
 .container{
-	max-width: 428px;
+	max-width: 500px;
 	margin: 0 auto;
 	background-color: #313438;
 	min-height: 100vh;

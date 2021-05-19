@@ -15,8 +15,16 @@
 </head>
 <body>
 
+
 <div class="container">
     <!--  SEARCH FORM -->
+
+
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+
+
     <form class="search-bar" method="get">
         <header class="header">
             {% csrf_token %}
@@ -27,7 +35,7 @@
 
     <!--  ADD-CONTACT BUTTON/ICON -->
     <a href="{% url 'create' %}"><i class="fas fa-user-plus add"></i></a>
-    <a href="{% url 'update_info' %}"><i class="fas fa-user-lock"></i></a>
+    <a href="{% url 'update_info' %}"><i class="fas fa-user-edit"></i></a>
     <a href="{% url 'logout' %}"><i class="fas fa-power-off"></i></a>
     </header>
 

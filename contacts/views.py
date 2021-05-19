@@ -3,7 +3,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
+from .forms import UserUpdateForm
 from .models import Contact
+
+from django.contrib import messages
 
 
 class ContactList(LoginRequiredMixin, ListView):
@@ -50,6 +53,7 @@ def contact_create(request):
 		)
 
 		contact.save()
+		messages.success(request, f'Account for {name.title()} created successfully.')
 		return redirect('home')
 
 	return render(request, 'contacts/create.html')
@@ -81,6 +85,7 @@ def update_contact(request, pk):
 		contact.note = request.POST['note']
 
 		contact.save()
+		messages.success(request, f'{contact.name.title()} details updated successfully.')
 		return redirect('home')
 
 	context = {
@@ -97,6 +102,7 @@ def delete_contact(request, pk):
 
 	if request.method == "POST":
 		contact.delete()
+		messages.success(request, 'Contact deleted successfully!.')
 		return redirect('home')
 
 	context = {
@@ -105,10 +111,21 @@ def delete_contact(request, pk):
 	return render(request, 'contacts/delete.html', context)
 
 
+# UPDATE USER INFO
+@login_required(login_url='login')
 def update_info(request):
+	form = UserUpdateForm(instance=request.user)
+
+	if request.method == "POST":
+		contact.name = request.POST['username']
+		form = UserUpdateForm(request.POST, instance=request.user)
+		if form.is_valid():
+			form.save()
+			messages.success(request, f'{contact.name.title()}  details updated successfully.')
+			return redirect('home')
 
 	context = {
-
+		'form' : form
 	}
 
 	return render(request, 'contacts/update_info.html', context)
