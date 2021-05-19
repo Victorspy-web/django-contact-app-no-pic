@@ -1,6 +1,6 @@
 # Contact Storage App
 
-This project is an inspiration from google contacts
+Be free to clone and customize to your liking..
 
 ## Getting Started
 
