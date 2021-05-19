@@ -103,3 +103,12 @@ def delete_contact(request, pk):
 		'contact': contact
 	}
 	return render(request, 'contacts/delete.html', context)
+
+
+def update_info(request):
+
+	context = {
+
+	}
+
+	return render(request, 'contacts/update_info.html', context)
