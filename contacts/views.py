@@ -53,7 +53,7 @@ def contact_create(request):
 		)
 
 		contact.save()
-		messages.success(request, f'Account for {name.title()} created successfully.')
+		messages.success(request, f'Account for {name.title()} has been created successfully!')
 		return redirect('home')
 
 	return render(request, 'contacts/create.html')
@@ -85,7 +85,7 @@ def update_contact(request, pk):
 		contact.note = request.POST['note']
 
 		contact.save()
-		messages.success(request, f'{contact.name.title()} details updated successfully.')
+		messages.success(request, f'{contact.name.title()} details updated successfully!')
 		return redirect('home')
 
 	context = {
@@ -102,7 +102,7 @@ def delete_contact(request, pk):
 
 	if request.method == "POST":
 		contact.delete()
-		messages.success(request, 'Contact deleted successfully!.')
+		messages.success(request, 'Contact deleted successfully!')
 		return redirect('home')
 
 	context = {
@@ -121,7 +121,7 @@ def update_info(request):
 		form = UserUpdateForm(request.POST, instance=request.user)
 		if form.is_valid():
 			form.save()
-			messages.success(request, f'{contact.name.title()}  details updated successfully.')
+			messages.success(request, f'{contact.name.title()}  details updated successfully!')
 			return redirect('home')
 
 	context = {

@@ -13,7 +13,7 @@ class CustomLoginView(SuccessMessageMixin, LoginView):
 	template_name = 'registration/login.html'
 	fields = '__all__'
 	redirect_authenticated_user = True
-	success_message = "%(username)s is signed in successfully"
+	success_message = "%(username)s is signed in successfully!"
 
 	def get_success_url(self):
 		return reverse_lazy('home')
@@ -27,7 +27,7 @@ class RegisterPage(SuccessMessageMixin, FormView):
 	template_name = 'registration/signup.html'
 	form_class = UserRegisterForm
 	redirect_authenticated_user = True
-	success_message = "Account for %(username)s has been created successfully"
+	success_message = "Account for %(username)s has been created successfully!"
 	success_url = reverse_lazy('home')
 
 	# Logs in registered user automatically

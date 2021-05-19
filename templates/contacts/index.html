@@ -33,7 +33,7 @@
     <form class="search-bar" method="get">
         <header class="header">
             {% csrf_token %}
-            <input type="search-name" class="contact-search" name="search-area" placeholder="Search contacts.."
+            <input type="search" class="contact-search" name="search-area" placeholder="Search contacts.."
                    autofocus>
     </form>
 
@@ -71,7 +71,7 @@
 
             <hr>
             {% empty %}
-            <h3 style="color: white">No contacts available..</h3>
+            <h3 style="color: white">No contacts found...</h3>
             {% endfor %}
 
         </ul>
