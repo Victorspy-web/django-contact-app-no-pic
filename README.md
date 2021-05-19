@@ -17,7 +17,7 @@ Check requirements.txt for packages to install
 First clone the repository from Github and switch to the project directory
 ```
 
-* git cloneadd origin https://github.com/Victorspy-web/django-contact-app-no-pic.git
+* git clone https://github.com/Victorspy-web/django-contact-app-no-pic.git
 
 
 ```
