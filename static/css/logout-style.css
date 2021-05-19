@@ -1,0 +1,43 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: lighter;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #417690;
+}
+
+.container {
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+
+#header {
+    width: 100%;
+    background: #417690;
+    color: #f5dd5d;
+}
+
+.h-container{
+    display: flex;
+    height: 37px;
+    align-items: center;
+}
+
+.home {
+    width: 100%;
+    background: #79aec8;
+}
+
+.home a {
+    color: white;
+}
+
+.down-text {
+    margin-left: 30px;
+    /*text-align: center;*/
+}

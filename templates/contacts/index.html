@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+
+    <title>All Contacts</title>
+</head>
+<body>
+
+<div class="container">
+    <!--  SEARCH FORM -->
+    <form class="search-bar" method="get">
+        <header class="header">
+            {% csrf_token %}
+            <input type="search-name" class="contact-search" name="search-area" placeholder="Search contacts.."
+                   autofocus>
+    </form>
+
+
+    <!--  ADD-CONTACT BUTTON/ICON -->
+    <a href="{% url 'create' %}"><i class="fas fa-user-plus add"></i></a>
+    <a href=""><i class="fas fa-user-edit"></i></a>
+    <a href="{% url 'logout' %}"><i class="fas fa-power-off"></i></a>
+    </header>
+
+    <!--  CONTACT LIST -->
+    {% for contact in contacts %}
+    <section class="contacts-library">
+        <ul class="contacts-list">
+
+            <a href="{% url 'contact' contact.id %}">
+                <div class="contact-section">
+                    <li class="list__item">
+
+                        <p class="contact-name">{{ contact.name }}</p>
+
+                        {% if contact.group %}
+                        <p class="relationship">{{ contact.group }}</p>
+                        {% else %}
+                        <p class="relationship">other</p>
+                        {% endif %}
+                    </li>
+
+                    <li class="list__item">
+                        <i class="fas fa-phone fa-spin fa-1.5x"></i>
+                        <i class="fas fa-sms text"></i>
+                    </li>
+                </div>
+            </a>
+
+            <hr>
+            {% empty %}
+            <h3 style="color: white">No contacts available..</h3>
+            {% endfor %}
+
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
