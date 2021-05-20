@@ -63,6 +63,7 @@ db.sqlite3-journal
 SECRET_KEY.py
 EMAIL_CONFIG_INFO.py
 
+
 # Flask stuff:
 instance/
 .webassets-cache

@@ -13,6 +13,7 @@ class CustomLoginView(SuccessMessageMixin, LoginView):
 	fields = '__all__'
 	redirect_authenticated_user = True
 	success_message = "%(username)s is signed in successfully!"
+	error_message = "Invalid username or password"
 
 	def get_success_url(self):
 		return reverse_lazy('home')
