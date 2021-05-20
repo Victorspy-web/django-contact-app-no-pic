@@ -5,6 +5,25 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
+## Must Do
+
+**Create this two files in the project base where settings.py can be found**
+```
+1) SECRET_KEY.py 
+2) EMAIL_CONFIG_INFO.py
+```
+* Inside the `SECRET_KEY.py`, create a variable name called SECRET_KEY and store your secret key in it. https://djecrety.ir can help you generate one.
+
+
+* Inside the `EMAIL_CONFIG_INFO.py` file, create 2 variable names called;
+  * `EMAIL_HOST_USER` = `'gmail address name'`
+  * `EMAIL_HOST_PASSWORD` = `'gmail address password'`
+  
+    * If google is not allowing you to login into you account 
+      using django then visit this url and set it ON
+      https://myaccount.google.com/lesssecureapps
+
+  
 **Prerequisites**
 
 ```
@@ -36,7 +55,6 @@ Install Django, activate and migrate project
 
 * pipenv install django==3.2 . `Dont forget the space and dot at the end!`
 * pipenv shell
-* pip install Pillow
 * python manage.py makemigrations
 * python manage.py migrate
 

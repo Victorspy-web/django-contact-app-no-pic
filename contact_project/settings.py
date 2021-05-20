@@ -14,6 +14,8 @@ from pathlib import Path
 
 from .SECRET_KEY import SECRET_KEY
 
+from .EMAIL_CONFIG_INFO import EMAIL_HOST_PASSWORD, EMAIL_HOST_USER
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -139,3 +141,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #This is to tell django where to redirect non-authenticated users
 LOGIN_URL = 'login'
+
+
+#SMTP Configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = EMAIL_HOST_USER                   #Your email address
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD           #Email password

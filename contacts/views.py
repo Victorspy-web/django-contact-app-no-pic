@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
@@ -5,8 +6,6 @@ from django.views.generic import ListView
 
 from .forms import UserUpdateForm
 from .models import Contact
-
-from django.contrib import messages
 
 
 class ContactList(LoginRequiredMixin, ListView):
@@ -53,7 +52,7 @@ def contact_create(request):
 		)
 
 		contact.save()
-		messages.success(request, f'Account for {name.title()} has been created successfully!')
+		messages.success(request, f'Contact {name.title()} created successfully!')
 		return redirect('home')
 
 	return render(request, 'contacts/create.html')
@@ -125,7 +124,7 @@ def update_info(request):
 			return redirect('home')
 
 	context = {
-		'form' : form
+		'form': form
 	}
 
 	return render(request, 'contacts/update_info.html', context)

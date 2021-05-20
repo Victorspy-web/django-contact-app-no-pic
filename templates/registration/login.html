@@ -22,12 +22,14 @@
             <span></span>
             <label>Username</label>
         </div>
+
         <div class="txt_field">
             {{ form.password }}
             <span></span>
             <label>Password</label>
         </div>
-        <div class="pass">Forgot Password?</div>
+
+        <div class="pass"><a href="{% url 'reset_password' %}">Forgot Password?</a></div>
         <input type="submit" value="Login">
         <div class="signup_link">
 

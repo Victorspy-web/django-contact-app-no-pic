@@ -1,12 +1,11 @@
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 
 from .forms import UserRegisterForm
-
-from django.contrib.messages.views import SuccessMessageMixin
 
 
 class CustomLoginView(SuccessMessageMixin, LoginView):
