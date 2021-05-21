@@ -1,6 +1,7 @@
 # Django Contacts App
 
-<img src="preview.png" alt="My project preview"/>
+<img src="static/images/preview.png" alt="My project preview image"/>
+<img src="static/images/preview2.png" alt="My project preview image"/>
 
 
 
