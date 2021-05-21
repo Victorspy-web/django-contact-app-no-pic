@@ -1,5 +1,8 @@
 # Django Contacts App
 
+<img src="preview.png" alt="My project preview"/>
+
+
 
 ## Getting Started
 
