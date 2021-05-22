@@ -20,7 +20,8 @@ class CustomLoginView(SuccessMessageMixin, LoginView):
 
 
 class CustomLogoutView(LogoutView):
-	template_name = 'registration/logout.html'
+	# template_name = 'registration/logout.html'
+	next_page = 'login'
 
 
 class RegisterPage(SuccessMessageMixin, FormView):
